@@ -56,16 +56,16 @@ Have 4 variables:
                                   "Pending" status.
 * SHORTY_BANNED - ( STRING ) - this is the variable that define the URI where Django-Shorty
                                redirect the user if the shortlink is on Status "Banned"
-                               Ex.:: SHORTY_BANNED = '/banned'
+                               Ex: :code:`SHORTY_BANNED = '/banned'`
 * SHORTY_PENDING - ( STRING ) - this is the variable that define the URI where Django-Shorty
                   	            redirect the user if the shortlink is on Status "Pending"
-                  	            Ex.:: SHORTY_PENDING = '/pending'
+                  	            Ex: :code:`SHORTY_PENDING = '/pending'`
 * SHORTY_REFUSED - ( STRING ) - this is the variable that define the URI where Django-Shorty
                   	            redirect the user if the shortlink is on Status "Refused"
-                  	            Ex.:: SHORTY_REFUSED = '/refused'
+                  	            Ex: :code:`SHORTY_REFUSED = '/refused'`
 
 All this variables are **mandatory**
-So in your settings.py, after INSTALLED_APPS you add all the SHORTY variables
+So in your settings.py, after :literal:`INSTALLED_APPS` you add all the :literal:`SHORTY` variables
 like this:
 
 .. code-block:: python
