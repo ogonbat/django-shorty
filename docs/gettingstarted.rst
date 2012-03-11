@@ -6,10 +6,11 @@ Getting started
 
 This guide is designed to point you to the best information about getting
 started with Django-Shorty.
+
 Prerequisites
 =============
 
-To get started with Pinax you must have the following installed:
+To get started with Django-Shorty you must have the following installed:
 
  * Python 2.4+.  Do **not** install Python 3+. Django-Shorty is not 
    compatible with Python 3 yet.
@@ -29,6 +30,7 @@ Enter into the Django-Shorty folder and type this command::
 
 Django-Shorty is now installed!
 
+.. _ref-configuration:
 
 Project Configuration
 ==================
@@ -37,12 +39,14 @@ Create a new Django project, now edit the settings.py file.
 Goto INSTALLED_APPS and add shorty app and active the administration
 interface
 
-::
-INSTALLED_APPS = (
-    ........
-    'django.contrib.admin',
-    'shorty',
-)
+.. code-block:: python
+	:linenos:
+	
+	INSTALLED_APPS = (
+    	........
+    	'django.contrib.admin',
+    	'shorty',
+	)
 
 Now you need to add the variables of Django-Shorty app.
 Have 4 variables:
@@ -62,12 +66,12 @@ Have 4 variables:
 
 All this variables are **mandatory**
 So in your settings.py, after INSTALLED_APPS you add all the SHORTY variables
-like this::
+like this:
 
-SHORTY_MODERATE = True
-
-SHORTY_BANNED = "/banned"
-
-SHORTY_PENDING = "/pending"
-
-SHORTY_REFUSED = "/refused"
+.. code-block:: python
+	:linenos:
+	
+	SHORTY_MODERATE = True
+	SHORTY_BANNED = "/banned"
+	SHORTY_PENDING = "/pending"
+	SHORTY_REFUSED = "/refused"
