@@ -6,20 +6,20 @@
 Welcome to Django-Shorty's documentation!
 =========================================
 
-Contents:
+Release |release|
+
+django-shorty is a django app for fast and easy creation of personal URL shortener service, like bit.ly or tinyURL.
+
+
+User Guide
+----------
 
 .. toctree::
    :maxdepth: 2
 	
-	First Step <first>
-		Installation <install>
-		Configuration <configure>
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
+	intro
+	
+.. toctree::
+   :maxdepth: 2
+   
+   gettingstarted
