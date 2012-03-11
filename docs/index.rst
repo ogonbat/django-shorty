@@ -11,7 +11,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
 	
-	First Step
+	First Step <first>
 		Installation <install>
 		Configuration <configure>
 
