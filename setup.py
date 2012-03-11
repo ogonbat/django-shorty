@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(
     name = "shorty",
     packages = ["shorty","shorty.utils"],
-    version = "0.0.1",
+    version = "0.1.0",
     description = "django-shorty is a django app to shorten links and share it",
     author = "Andrea Mucci",
     author_email = "cingusoft@gmail.com",
