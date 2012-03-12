@@ -89,7 +89,7 @@ To configure Django-Shorty url you need to use only two views:
 So, for example if Django-Shorty is your Home Page project and you want to show the 
 form for add a new url:
 
-..code-block:: python
+.. code-block:: python
 	:linenos:
 	
 	urlpatterns = patterns('',
@@ -103,7 +103,7 @@ have a Default template for this page, the template will be located in ::literal
 If you want you can change the name and the location of this template file, passing an
 option to the url regex:
 
-..code-block:: python
+.. code-block:: python
 	:linenos:
 	
 	urlpatterns = patterns('',
