@@ -16,8 +16,8 @@ User Guide
 
 .. toctree::
    :maxdepth: 2
-	
-    intro
+   
+   intro
 	
 .. toctree::
    :maxdepth: 2

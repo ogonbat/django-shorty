@@ -13,7 +13,7 @@ All this features are controlled from the Django admin page.
 .. _license:
 
 Django-Shorty License
--------------
+----------------------
 
 Copyright (c) 2010-2012 Andrea Mucci.
 
