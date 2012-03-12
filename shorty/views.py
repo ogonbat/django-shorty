@@ -93,14 +93,16 @@ def add_shorty_url(request,shorty_template='shorty/add.html'):
                 model_shorty.personal = True
                 model_shorty.personal_slug = request.POST.get('personal_slug')
                 short_url = request.POST.get('personal_slug')
+                model_shorty.save()
             else:
+                model_shorty.save()
                 short_url = url_encode(model_shorty.id)
                 
             data_context = {
                 'shorty_form': form,
                 'url_slug': short_url,
             }
-            model_shorty.save()
+            
         
         else:
             data_context = {
