@@ -33,7 +33,7 @@ Django-Shorty is now installed!
 .. _ref-configuration:
 
 Project Configuration
-==================
+=====================
 
 Create a new Django project, now edit the settings.py file.
 Goto :literal:`INSTALLED_APPS` and add :literal:`shorty` app and active the administration
@@ -79,7 +79,7 @@ like this:
 .. _ref-url:
 
 URL Configuration
-=============
+=================
 
 To configure Django-Shorty url you need to use only two views:
 
