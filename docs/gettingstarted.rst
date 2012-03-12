@@ -51,65 +51,87 @@ interface
 Now you need to add the variables of Django-Shorty app.
 Have 4 variables:
 
-* SHORTY_MODERATE - ( BOOLEAN ) - this variable define if you want moderate the link, 
-                                  if this variable is set to TRUE any new link is add on
-                                  "Pending" status.
-* SHORTY_BANNED - ( STRING ) - this is the variable that define the URI where Django-Shorty
-                               redirect the user if the shortlink is on Status "Banned"
-                               Ex: :literal:`SHORTY_BANNED = '/banned'`
-* SHORTY_PENDING - ( STRING ) - this is the variable that define the URI where Django-Shorty
-                  	            redirect the user if the shortlink is on Status "Pending"
-                  	            Ex: :literal:`SHORTY_PENDING = '/pending'`
-* SHORTY_REFUSED - ( STRING ) - this is the variable that define the URI where Django-Shorty
-                  	            redirect the user if the shortlink is on Status "Refused"
-                  	            Ex: :literal:`SHORTY_REFUSED = '/refused'`
-
-All this variables are **mandatory**
-So in your settings.py, after :literal:`INSTALLED_APPS` you add all the :literal:`SHORTY` variables
-like this:
-
-.. code-block:: python
-	:linenos:
-	
-	SHORTY_MODERATE = True
-	SHORTY_BANNED = "/banned"
-	SHORTY_PENDING = "/pending"
-	SHORTY_REFUSED = "/refused"
+* SHORTY_MODERATE - ( BOOLEAN ):
+  Default value is *False*
+  If set *True* all the new URL added are on **Pending** status.
+* SHORTY_BANNED - ( STRING ) - 
+  Default value: */banned*
+  this is the url redirect for banned URL's
+* SHORTY_PENDING - ( STRING ) - 
+  Default value: */pending*
+  this is the url redirect for pending URL's
+* SHORTY_REFUSED - ( STRING ) - 
+  Default value: */refused*
+  this is the url redirect for refused URL's
 
 .. _ref-url:
 
 URL Configuration
 =================
 
-To configure Django-Shorty url you need to use only two views:
+To configure the defaults url you need to use include:
 
-* :literal:`shorty.views.add_shorty_url` - add new link with the add form
-* :literal:`shorty.views.shorty_url` - the redirect view
+.. code-block:: python
+	:linenos:
+	url(r'^', include('shorty.urls')),
 
-So, for example if Django-Shorty is your Home Page project and you want to show the 
-form for add a new url:
+this code is valid if you want to add Django-Shorty as Home Page
+
+.. _ref-template:
+
+Template Files
+=================
+
+The templates file are:
+
+* :literal:`shorty/add.html`
+* :literal:`shorty/private.html` ( URl password request )
+
+.. _ref-form:
+
+Form
+=================
+
+the name of the form template variable is the same in the *add* view and in the *password check* view,
+:literal:`shorty_form`
+Ex:
+
+:literal:`shorty/add.html`
 
 .. code-block:: python
 	:linenos:
 	
-	urlpatterns = patterns('',
-   		url(r'^/?$','shorty.views.add_shorty_url'),
-    	#more urls
-	)
-	
-Go to the home page of your project, for example :literal:`http://localhost:8000`
-and if all work well you can get an template error. This occur because Django-Shorty
-have a Default template for this page, the template will be located in ::literal:`shorty/add.html`
-If you want you can change the name and the location of this template file, passing an
-option to the url regex:
+	<form action="." method="post">
+    	{% csrf_token %}
+    	{{ shorty_form.as_p }}
+    	<input type="submit" value="Submit" />
+	</form>
+
+:literal:`shorty/private.html`
 
 .. code-block:: python
 	:linenos:
 	
-	urlpatterns = patterns('',
-   		url(r'^/?$','shorty.views.add_shorty_url',{'shorty_template':'add.html'}),
-    	#more urls
-	)
+	<form action="." method="post">
+    	{% csrf_token %}
+    	{{ shorty_form.as_p }}
+    	<input type="submit" value="Submit" />
+	</form>
 
-In this case Django-Shorty find the template file :literal:`add.html` into the root
-template directory
+The :literal:`shorty/add.html` have other template variable.
+When the process is completed the page return to the *add view* and
+if you want to show the *slug* code you can use the :literal:`url_slug`
+
+.. code-block:: python
+	:linenos:
+	
+	<form action="." method="post">
+    	{% csrf_token %}
+    	{{ shorty_form.as_p }}
+    	<input type="submit" value="Submit" />
+	</form>
+	The Short URL:
+	{% if url_slug %}
+		http://ttt.io/{{ url_slug }}
+	{% endif %}
+
