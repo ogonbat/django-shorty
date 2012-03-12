@@ -52,17 +52,17 @@ Now you need to add the variables of Django-Shorty app.
 Have 4 variables:
 
 * SHORTY_MODERATE - ( BOOLEAN ):
-  Default value is *False*
-  If set *True* all the new URL added are on **Pending** status.
+	* Default value is *False*
+	* If set *True* all the new URL added are on **Pending** status.
 * SHORTY_BANNED - ( STRING ) - 
-  Default value: */banned*
-  this is the url redirect for banned URL's
+	* Default value: */banned*
+	* This is the url redirect for banned URL's
 * SHORTY_PENDING - ( STRING ) - 
-  Default value: */pending*
-  this is the url redirect for pending URL's
+	* Default value: */pending*
+	* This is the url redirect for pending URL's
 * SHORTY_REFUSED - ( STRING ) - 
-  Default value: */refused*
-  this is the url redirect for refused URL's
+	* Default value: */refused*
+	* This is the url redirect for refused URL's
 
 .. _ref-url:
 
@@ -73,6 +73,7 @@ To configure the defaults url you need to use include:
 
 .. code-block:: python
 	:linenos:
+	
 	url(r'^', include('shorty.urls')),
 
 this code is valid if you want to add Django-Shorty as Home Page
@@ -90,7 +91,7 @@ The templates file are:
 .. _ref-form:
 
 Form
-=================
+=======
 
 the name of the form template variable is the same in the *add* view and in the *password check* view,
 :literal:`shorty_form`
