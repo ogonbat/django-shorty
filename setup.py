@@ -9,6 +9,7 @@ setup(
     author_email = "cingusoft@gmail.com",
     url = "https://github.com/ogonbat/django-shorty",
     keywords = ["bit.ly", "shorten link", "django"],
+    requires = ['django-piston'],
     classifiers = [
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",
