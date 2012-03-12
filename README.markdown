@@ -4,7 +4,7 @@ Make your private URL shortening service like bit.ly or tinyURL.
 
 ## Documentation
 
-Please see Project [Wiki](http://readthedocs.org/docs/django-shorty/en/latest/)
+Please see Project [Wiki](django-shorty.readthedocs.org)
 
 
 ## Author
