@@ -1,10 +1,10 @@
 from distutils.core import setup
 
 setup(
-    name = "shorty",
+    name = "django-shorty",
     packages = ["shorty","shorty.utils"],
     version = "0.1.0",
-    description = "django-shorty is a django app to shorten links and share it",
+    description = "Django-shorty is a django app for fast and easy creation of personal URL shortener service, like bit.ly or tinyURL.",
     author = "Andrea Mucci",
     author_email = "cingusoft@gmail.com",
     url = "https://github.com/ogonbat/django-shorty",
@@ -27,9 +27,14 @@ setup(
 Django app for fast shorten links generation
 -------------------------------------
 
-This project use Bijective Algorithm to get the shorten link
+Features:
+- Bijective Algorithm for encode/decode slug
+- 301 Redirect Status Code
+- Password protected redirect service
+- Django Admin interface management and custom admin actions
+- URL moderation
 
-Feature Developments:
+Roadmap:
 - add views count
 - add rest interface
  

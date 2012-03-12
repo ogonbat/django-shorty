@@ -28,6 +28,10 @@ Enter into the Django-Shorty folder and type this command::
 
 	$ python setup.py install
 
+or use pip::
+	
+	$ pip install django-shorty
+
 Django-Shorty is now installed!
 
 .. _ref-configuration:
