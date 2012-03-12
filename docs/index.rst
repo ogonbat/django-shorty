@@ -23,3 +23,8 @@ User Guide
    :maxdepth: 2
    
    gettingstarted
+   
+.. toctree::
+   :maxdepth: 2
+   
+   features
