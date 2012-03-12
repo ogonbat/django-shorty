@@ -7,7 +7,7 @@ from shorty.utils import url_decode
 from shorty import SHORTY_ANONYMOUS_ADD, SHORTY_MODERATE, SHORTY_BANNED,\
     SHORTY_PENDING, SHORTY_REFUSED
 
-__author__ = 'ogonbat'
+__author__ = 'cingusoft'
 
 def shorty_filter_url(view):
     @wraps(view)

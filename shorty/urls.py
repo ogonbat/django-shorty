@@ -1,11 +1,5 @@
-'''
-Created on 12/03/2012
-
-@author: amucci
-'''
 from django.conf.urls.defaults import patterns, url
 from shorty.views import shorty_url, add_shorty_url
-
 
 __author__ = 'cingusoft'
 
