@@ -2,14 +2,14 @@ from distutils.core import setup
 
 setup(
     name = "django-shorty",
-    packages = ["shorty","shorty.utils"],
+    packages = ["shorty","shorty.utils","shorty.api","shorty.piston"],
     version = "0.1.0",
     description = "Django-shorty is a django app for fast and easy creation of personal URL shortener service, like bit.ly or tinyURL.",
     author = "Andrea Mucci",
     author_email = "cingusoft@gmail.com",
     url = "https://github.com/ogonbat/django-shorty",
     keywords = ["bit.ly", "shorten link", "django"],
-    requires = ['django-piston'],
+    #requires = ["django-piston"],
     classifiers = [
         "Programming Language :: Python",
         "Programming Language :: Python :: 3",

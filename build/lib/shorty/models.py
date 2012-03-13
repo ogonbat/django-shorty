@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.db import models
 from django.contrib.auth.models import User
-
+__author__ = 'cingusoft'
 # Create your models here.
 from shorty.admins import UrlAdmin
 

@@ -1,5 +1,7 @@
 from django.http import HttpResponsePermanentRedirect
 
+__author__ = 'cingusoft'
+
 #method for url redirection
 from django.shortcuts import render_to_response
 from django.template.context import RequestContext
