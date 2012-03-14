@@ -1,4 +1,6 @@
 from django.http import HttpResponsePermanentRedirect
+from django.contrib.auth.decorators import login_required
+import random
 
 __author__ = 'cingusoft'
 
@@ -7,7 +9,7 @@ from django.shortcuts import render_to_response
 from django.template.context import RequestContext
 from shorty.decorators import shorty_filter_url, shorty_login_required
 from shorty.forms import Private_Form, Shorty_Form
-from shorty.models import Url
+from shorty.models import Url, Api_Token
 from shorty.utils import url_encode
 from shorty import SHORTY_MODERATE
 
@@ -121,3 +123,19 @@ def add_shorty_url(request,shorty_template='shorty/add.html'):
         }
         
         return render_to_response(shorty_template,data_context,context_instance=RequestContext(request))
+
+@login_required
+def get_auth_token(request,shorty_template='shorty/token_request.html'):
+    try:
+        tokenDb = Api_Token.objects.get(user=request.user)
+    except Api_Token.DoesNotExist:
+        while True:
+            string_token = ''.join(random.sample('abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', 25))
+            if not Api_Token.objects.filter(token=string_token).exists():
+                tokenDb = Api_Token(user=request.user,token=string_token)
+                tokenDb.save()
+                break
+    data_context = {
+                    'token': tokenDb.token
+                    }
+    return render_to_response(shorty_template,data_context,context_instance=RequestContext(request))

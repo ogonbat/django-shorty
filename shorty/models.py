@@ -40,4 +40,10 @@ class Url(models.Model):
             return True
         return None
     
+class Api_Token(models.Model):
+    user = models.OneToOneField(User)
+    token = models.CharField(max_length=125,unique=True)
+    created = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)
+
 admin.site.register(Url,UrlAdmin)

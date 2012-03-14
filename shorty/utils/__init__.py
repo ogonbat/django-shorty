@@ -21,3 +21,4 @@ def url_decode(s):
     for char in s:
         i = i*base+ALPHABET.index(char)
     return i
+    
