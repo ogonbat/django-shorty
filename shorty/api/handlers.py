@@ -5,6 +5,7 @@ from django.core import serializers
 from django.http import Http404
 
 @require_http_methods(['GET'])
+
 def get_info(self,request,slug=None):
     base = Url.objects
     if slug != None:
