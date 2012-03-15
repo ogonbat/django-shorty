@@ -2,7 +2,7 @@ from distutils.core import setup
 
 setup(
     name = "django-shorty",
-    packages = ["shorty","shorty.utils","shorty.api","shorty.piston"],
+    packages = ["shorty","shorty.utils","shorty.api"],
     version = "0.1.0",
     description = "Django-shorty is a django app for fast and easy creation of personal URL shortener service, like bit.ly or tinyURL.",
     author = "Andrea Mucci",

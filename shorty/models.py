@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.db import models
 from django.contrib.auth.models import User
+from shorty.utils import url_encode
 __author__ = 'cingusoft'
 # Create your models here.
 from shorty.admins import UrlAdmin
@@ -16,6 +17,10 @@ class Url(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
     
+    @property
+    def slug(self):
+        url_encode(self.id)
+        
     @property
     def is_active(self):
         if self.status == 'Active':
