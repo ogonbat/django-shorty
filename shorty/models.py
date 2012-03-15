@@ -2,9 +2,10 @@ from django.contrib import admin
 from django.db import models
 from django.contrib.auth.models import User
 from shorty.utils import url_encode
+
 __author__ = 'cingusoft'
 # Create your models here.
-from shorty.admins import UrlAdmin
+from shorty.admins import UrlAdmin, TokenAdmin
 
 class Url(models.Model):
     user = models.ForeignKey(User,blank=True,null=True)
@@ -48,7 +49,9 @@ class Url(models.Model):
 class Api_Token(models.Model):
     user = models.OneToOneField(User)
     token = models.CharField(max_length=125,unique=True)
+    status = models.CharField(max_length=10)
     created = models.DateTimeField(auto_now_add=True)
     modified = models.DateTimeField(auto_now=True)
 
 admin.site.register(Url,UrlAdmin)
+admin.site.register(Api_Token,TokenAdmin)

@@ -59,3 +59,9 @@ class UrlAdmin(admin.ModelAdmin):
         else:
             return "no"
     is_protected.short_description = "Is Protected"
+
+class TokenAdmin(admin.ModelAdmin):
+    date_hierarchy = 'created'
+    list_display = ('user','token','created')
+    list_filter = ('user',)
+    search_fields = ('token','user')
