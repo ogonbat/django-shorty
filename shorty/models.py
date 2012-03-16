@@ -16,11 +16,11 @@ class Url(models.Model):
     private = models.BooleanField(default=False)
     private_password = models.CharField(max_length=25,blank=True,null=True)
     created = models.DateTimeField(auto_now_add=True)
-    modified = models.DateTimeField(auto_now=True)
+    modified = models.DateTimeField(auto_now=True)    
     
     @property
     def slug(self):
-        url_encode(self.id)
+        return url_encode(self.id)
         
     @property
     def is_active(self):
@@ -45,7 +45,6 @@ class Url(models.Model):
         if self.status == 'Refused':
             return True
         return None
-    
 class Api_Token(models.Model):
     user = models.OneToOneField(User)
     token = models.CharField(max_length=125,unique=True)
